@@ -1,2 +1,19 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1><%= @category.name %></h1>
+
+<div><%= image_tag @category.image.url(:medium) %></div>
+<ul>
+  <li><%= link_to "Edit", edit_category_path(@category) %></li>
+  <li><%= link_to "Destroy", category_path(@category),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
+<%
+=begin%>
+ 
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %> 
+<%
+=end%>
