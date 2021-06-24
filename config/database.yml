@@ -1,0 +1,20 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: globus_development
+  username: postgres
+  password: postgres
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: globus_test
+  username: postgres
+  password: postgres
+
+production:
+  database: globus_production
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: postgres
