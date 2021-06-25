@@ -1,11 +1,12 @@
-<h1>Articles</h1>
+<h1>Категории товаров</h1>
 
-<ul>
-  <% @categories.each do |cat| %>
+<ul class="list-inline">
+  <% @categories.each do |form| %>
     <li>
-      <%= link_to cat.name, cat %>
+      <%= link_to form.name, form %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to "New Category", new_category_path %>
+<%= link_to "Добавить категорию товара", new_category_path, class:"btn btn-lg btn-primary" %>
+<%= link_to "Добавить товар", new_product_path, class:"btn btn-lg btn-primary" %>

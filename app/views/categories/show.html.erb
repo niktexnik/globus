@@ -1,19 +1,11 @@
+<% provide(:title, "Просмотр категорий") %>
 <h1><%= @category.name %></h1>
 
-<div><%= image_tag @category.image.url(:medium) %></div>
-<ul>
-  <li><%= link_to "Edit", edit_category_path(@category) %></li>
-  <li><%= link_to "Destroy", category_path(@category),
+<div><%= image_tag  @category.image.url(:large), {:class => 'img-fluid img-thumbnail'}%></div>
+<ul class="list-inline">
+  <li class="list-group-item"><%= link_to "Редактировать категорию товара", edit_category_path(@category) %></li>
+  <li class="list-group-item"><%= link_to "Удалить категорию товара", category_path(@category),
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
+                  data: { confirm: "Вы уверены?" } %></li>
+  <li class="list-group-item"><%= link_to "Назад", root_path %></li>
 </ul>
-<%
-=begin%>
- 
-<h2>Comments</h2>
-<%= render @article.comments %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %> 
-<%
-=end%>

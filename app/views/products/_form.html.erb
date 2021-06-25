@@ -1,0 +1,15 @@
+<%= form_for @product, html: { multipart: true } do |form| %>
+<div><%= image_tag @product.image.url(:large) %></div>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @product.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+ <%= form.file_field :image %>
+  <div>
+      <%=form.submit %>
+  </div>
+  <%= link_to "В главное меню", root_path, class:"btn btn-lg btn-primary" %>
+<% end %>
