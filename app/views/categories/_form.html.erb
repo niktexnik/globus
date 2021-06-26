@@ -1,14 +1,22 @@
 <%= form_for @category, html: { multipart: true } do |form| %>
-<div><%= image_tag @category.image.url(:large) %></div>
+<%
+=begin%>
+ <div><%= image_tag @category.image.url(:large) %></div> 
+<%
+=end%>
   <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
     <% @category.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
-  </div>
+  <%
+=begin%>
+ </div>
  <%= form.file_field :image %>
-  <div>
+  <div> 
+<%
+=end%>
       <%=form.submit %>
   </div>
   <%= link_to "В главное меню", root_path, class:"btn btn-lg btn-primary" %>

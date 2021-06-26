@@ -1,0 +1,8 @@
+<% provide(:title, @user.nikname) %>
+<h1><%= @user.nikname %></h1>
+<div>
+Теперь вы можете редактировать категории товаров и добавлять товар!
+</div>
+<div>   
+<li> <%= link_to "Редактировать товар и категории", root_path%></li> </div>
+<li> <%= link_to "Больше не хочу быть админом((((", logout_path, method: "delete" %></li> </div>

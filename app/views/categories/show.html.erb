@@ -1,7 +1,11 @@
 <% provide(:title, "Просмотр категорий") %>
 <h1><%= @category.name %></h1>
-
-<div><%= image_tag  @category.image.url(:large), {:class => 'img-fluid img-thumbnail'}%></div>
+<%= link_to "Добавить товар", new_product_path, class:"btn btn-lg btn-primary" %>
+<%
+=begin%>
+ <div><%= image_tag  @category.image.url(:large), {:class => 'img-fluid img-thumbnail'}%></div> 
+<%
+=end%>
 <ul class="list-inline">
   <li class="list-group-item"><%= link_to "Редактировать категорию товара", edit_category_path(@category) %></li>
   <li class="list-group-item"><%= link_to "Удалить категорию товара", category_path(@category),
